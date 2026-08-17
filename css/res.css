@@ -1,0 +1,217 @@
+* {
+   margin: 0;
+   padding: 0;
+   font-family: Montserrat;
+   box-sizing: border-box; 
+}
+body {
+   background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 8px,
+      hsl(17 72.2% 10% / 0.03) 10px,
+      hsl(17 72.2% 10% / 0.03) 11px
+   );
+}
+   /* ============================================================================
+      Templates
+   ============================================================================ */
+nav h1,
+.section h2,
+.chapters h4 {
+   margin-left: 25px;
+}
+h2 {
+   margin-bottom: 5px;
+}
+.title {
+   font-family: "Playfair Display";
+}
+a {
+   color: hsl(325 72.2% 35%);
+   text-decoration-color: hsl(17 72.2% 10% / 0.2);
+   transition: color 0.25s, text-decoration-color 0.25s;
+}
+a:hover {
+   color: hsl(17 72.2% 30% / 0.7);
+   text-decoration-color: hsl(17 72.2% 10% / 0.6);
+}
+
+.sections {
+   display: flex;
+   flex-wrap: wrap;
+}
+.section {
+   background-color: hsl(17 72.2% 91.4%);
+   box-shadow: -1px -1px 5px hsl(17 72.2% 10% / 0.5);
+   transition: box-shadow 0.1s ease-in;
+   margin: 15px;
+   border-radius: 5px;
+}
+.section p {
+   margin-left: 35px;
+}
+@media screen and (width >= 950px) {
+   .section p {
+      width: 75%;
+   }
+}
+@media screen and (width >= 1200px) {
+   .section p {
+      width: 50%;
+   }
+}
+.section:hover {
+   box-shadow: -3px -3px 10px hsl(17 72.2% 10% / 0.7);
+}
+   /* ============================================================================
+      Styling multiple separate elements 
+   ============================================================================ */
+nav,
+div.links,
+footer {
+   display: flex;
+   flex-wrap: wrap;
+}
+nav .links h3:hover,
+footer h6:hover {
+   transform: translateY(-3px);
+   text-shadow: 0px 7px 5px rgba(0, 0, 0, 0.2);
+   transition: transform 0.25s ease-in, text-shadow 0.25s ease-in;
+}
+
+footer,
+footer .links,
+nav .links {
+   gap: 25px;
+}
+
+.about,
+.github,
+.resources {
+   padding: 10px 0;
+}
+
+   /* ============================================================================
+      Styling the Nav bar 
+   ============================================================================ */
+
+nav {
+   align-items: center;
+   background-color: hsl(17 72.2% 80%);
+   box-shadow: -3px -3px 10px hsl(17 72.2% 10%);
+   transition: box-shadow 0.25s ease-out;
+   border-radius: 16px;
+   margin: 10px;
+   padding: 8px 0;
+}
+nav h1 {
+   margin-right: 35px;
+}
+nav .links { 
+   margin: 0 25px 0 auto;
+}
+   /* ============================================================================
+      Adding reactivity to the Nav bar
+   ============================================================================ */
+nav:hover {
+   box-shadow: -5px -5px 15px hsl(17 72.2% 10%);
+}
+
+nav .links h3 {
+    transition: transform 0.25s, text-shadow 0.25s;
+}
+
+   /* ============================================================================
+      Styling individual sections
+
+      .about 
+   ============================================================================*/
+
+.about {
+   flex: 2 1 300px;
+   max-width: 1000px;
+}
+.about h2 {
+   display: inline-block;
+}
+
+   /* ============================================================================
+      .github
+   ============================================================================ */
+
+.github {
+   display: flex;
+   flex-direction: column;
+   flex: 1 2;
+   margin-right: 15px;
+}
+.github h2 {
+   display: inline-block;
+}
+.github p {
+   margin: 0 10px 0 25px;
+}
+.github p,
+.github a {
+   font-family: "Playfair Display";
+}
+
+@media screen and (width <= 648px) {
+   .sections {
+      justify-content: center;
+   }
+}
+@media screen and (width <= 700px) {
+   .github {
+      flex-basis: 100%;
+      margin: 0 15px;
+   }
+   
+}
+
+   /* ============================================================================
+      .resources
+   ============================================================================ */
+
+.resources {
+   flex-basis: 100%;
+}
+.resources h4 {
+   margin-left: 50px;
+}
+.resources li {
+   width: fit-content;
+   margin-left: 75px;
+   transition: transform 0.25s ease-in, text-shadow 0.25s ease-in;
+}
+.resources li:hover {
+   cursor: pointer;
+   transform: translateY(-3px);
+   text-shadow: 0px 7px 5px rgba(0, 0, 0, 0.2);
+}
+
+   /* ============================================================================
+      footer
+   ============================================================================ */
+
+footer {
+   padding: 10px;
+}
+footer h6,
+footer h6 {
+   transition: transform 0.25s, text-shadow 0.25s;
+}
+footer h6.first {
+   margin-right: auto;
+}
+footer h6.last {
+   margin-right: 20px;
+}
+
+footer.section:hover {
+   box-shadow: -1px -1px 10px hsl(17 72.2% 10% / 0.7);
+}
+footer h6:hover {
+   transform: translateY(-1.5px);
+}
