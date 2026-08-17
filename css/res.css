@@ -13,19 +13,16 @@ body {
       hsl(17 72.2% 10% / 0.03) 11px
    );
 }
+:root {
+   --light-orange:hsl(17 72.2% 91.4% / 0.7);
+   --dark-orange: hsl(17 72.2% 80% / 0.9);
+}
    /* ============================================================================
       Templates
    ============================================================================ */
-nav h1,
-.section h2,
-.chapters h4 {
-   margin-left: 25px;
-}
-h2 {
-   margin-bottom: 5px;
-}
 .title {
    font-family: "Playfair Display";
+   margin: 0 0 5px 25px;
 }
 a {
    color: hsl(325 72.2% 35%);
@@ -42,9 +39,9 @@ a:hover {
    flex-wrap: wrap;
 }
 .section {
-   background-color: hsl(17 72.2% 91.4%);
+   background-color: var(--light-orange);
    box-shadow: -1px -1px 5px hsl(17 72.2% 10% / 0.5);
-   transition: box-shadow 0.1s ease-in;
+   transition: box-shadow 0.1s ease-in, background-color 0.1s ease-in;;
    margin: 15px;
    border-radius: 5px;
 }
@@ -63,6 +60,7 @@ a:hover {
 }
 .section:hover {
    box-shadow: -3px -3px 10px hsl(17 72.2% 10% / 0.7);
+   background-color: hsl(17 72.2% 91.4%);
 }
    /* ============================================================================
       Styling multiple separate elements 
@@ -78,6 +76,10 @@ footer h6:hover {
    transform: translateY(-3px);
    text-shadow: 0px 7px 5px rgba(0, 0, 0, 0.2);
    transition: transform 0.25s ease-in, text-shadow 0.25s ease-in;
+}
+.about h2,
+.github h2 {
+   display: inline-block;
 }
 
 footer,
@@ -98,7 +100,7 @@ nav .links {
 
 nav {
    align-items: center;
-   background-color: hsl(17 72.2% 80%);
+   background-color: var(--dark-orange);
    box-shadow: -3px -3px 10px hsl(17 72.2% 10%);
    transition: box-shadow 0.25s ease-out;
    border-radius: 16px;
@@ -132,9 +134,6 @@ nav .links h3 {
    flex: 2 1 300px;
    max-width: 1000px;
 }
-.about h2 {
-   display: inline-block;
-}
 
    /* ============================================================================
       .github
@@ -145,9 +144,6 @@ nav .links h3 {
    flex-direction: column;
    flex: 1 2;
    margin-right: 15px;
-}
-.github h2 {
-   display: inline-block;
 }
 .github p {
    margin: 0 10px 0 25px;
