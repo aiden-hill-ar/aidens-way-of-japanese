@@ -4,6 +4,9 @@
    font-family: Montserrat;
    box-sizing: border-box; 
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
    background-image: repeating-linear-gradient(
       45deg,
@@ -36,6 +39,9 @@ a {
 a:hover {
    color: hsl(325 72.2% 30% / 0.7);
    text-decoration-color: hsl(325 72.2% 10% / 0.6);
+}
+.pg-link {
+   scroll-margin-top: 100px;
 }
 
 .sections {
@@ -135,7 +141,7 @@ nav {
    margin: 10px;
    padding: 8px 0;
 }
-nav h1 {
+nav h1.title {
    margin-right: 35px;
 }
 nav .links { 
