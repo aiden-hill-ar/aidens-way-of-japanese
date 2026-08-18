@@ -77,10 +77,6 @@ footer h6:hover {
    text-shadow: 0px 7px 5px rgba(0, 0, 0, 0.2);
    transition: transform 0.25s ease-in, text-shadow 0.25s ease-in;
 }
-.about h2,
-.github h2 {
-   display: inline-block;
-}
 
 footer,
 footer .links,
@@ -183,8 +179,7 @@ nav .links h3 {
 }
 .resources li:hover {
    cursor: pointer;
-   transform: translateY(-3px);
-   text-shadow: 0px 7px 5px rgba(0, 0, 0, 0.2);
+   transform: translateX(10px);
 }
 
    /* ============================================================================

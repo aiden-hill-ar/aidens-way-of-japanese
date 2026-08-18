@@ -24,6 +24,10 @@ body {
    font-family: "Playfair Display";
    margin: 0 0 5px 25px;
 }
+.sub-title {
+   margin: 10px 5px 5px 25px;
+   font-size: 16px;
+}
 a {
    color: hsl(17 72.2% 35%);
    text-decoration-color: hsl(325 72.2% 10% / 0.2);
@@ -63,21 +67,10 @@ a:hover {
    );
    margin: 15px 30px;
 }
-
 .section p {
    margin-left: 35px;
 }
 
-@media screen and (width >= 950px) {
-   .section p {
-      width: 75%;
-   }
-}
-@media screen and (width >= 1200px) {
-   .section p {
-      width: 50%;
-   }
-}
 .section:hover {
    box-shadow: -3px -3px 10px hsl(325 72.2% 10% / 0.7);
    background-color: hsl(325 72.2% 91.4%);
@@ -226,15 +219,12 @@ div.title-bar p {
 }
 
 .sub-section.katakana {
+   display: flex;
+   flex-direction: column;
    flex: 1;
 }
 .katakana .title {
    margin: 0 25px 5px 25px;
-}
-@media screen and (width <= 830px) {
-   .sub-section.katakana {
-      flex-basis: 100%;
-   }
 }
 
    /* ============================================================================
@@ -259,4 +249,41 @@ footer.section:hover {
 }
 footer h6:hover {
    transform: translateY(-1.5px);
+}
+
+   /* ============================================================================
+      @media
+   ============================================================================ */
+
+@media screen and (width <= 830px) {
+   .sub-section.hirigana {
+      margin-left: 10px;
+      margin-right: 10px;
+      padding-right: 0;
+   }
+   .sub-section.katakana {
+      flex-basis: 100%;
+      margin-left: 10px;
+      margin-right: 10px;
+   }
+   .about h2,
+   .chapters h2,
+   .about p,
+   .chapters p,
+   .chapters h4 {
+      margin-left: 0;
+   }
+   .chapters li {
+      margin-left: 25px;
+   }
+}
+@media screen and (width >= 950px) {
+   .section p {
+      width: 75%;
+   }
+}
+@media screen and (width >= 1200px) {
+   .section p {
+      width: 50%;
+   }
 }
