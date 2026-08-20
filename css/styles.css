@@ -43,17 +43,31 @@ a:hover {
 .pg-link {
    scroll-margin-top: 100px;
 }
-
-.sections {
-   display: flex;
-   flex-wrap: wrap;
+.sub-section li {
+   margin: 20px 30px;
 }
+li.link {
+   transition: transform 0.25s ease-in-out, text-decoration 0.25s;
+   margin-top: 5px;
+}
+li.link-nb {
+   transition: transform 0.25s ease-in-out, text-decoration 0.25s;
+   list-style-type: none;
+   margin-top: 5px;
+}
+li.link:hover,
+li.link-nb:hover {
+   cursor: pointer;
+   transform: translateX(10px);
+   text-decoration: underline hsl(325 72.2% 50%);
+}
+
 .section,
 .jap-section,
 .sub-section {
    background-color: var(--light-pink);
    box-shadow: -1px -1px 5px hsl(325 72.2% 10% / 0.5);
-   transition: box-shadow 0.1s ease-in, background-color 0.1s ease-in;
+   transition: box-shadow 0.15s ease-out, background-color 0.15s ease-out;
    margin: 15px;
    padding: 10px 15px 30px;
    border-radius: 5px;
@@ -68,8 +82,8 @@ a:hover {
       45deg,
       transparent,
       transparent 8px,
-      hsl(325 72.2% 10% / 0.01) 10px,
-      hsl(325 72.2% 10% / 0.01) 11px
+      hsl(325 72.2% 10% / 0.012) 10px,
+      hsl(325 72.2% 10% / 0.012) 11px
    );
    margin: 15px 30px;
 }
@@ -82,24 +96,20 @@ a:hover {
    background-color: hsl(325 72.2% 91.4%);
 }
 .jap-section:hover {
-   box-shadow: -2px -2px 10px hsl(325 72.2% 10% / 0.7);
+   box-shadow: -5px -5px 10px hsl(325 72.2% 10% / 0.7);
    background-color: hsl(325 72.2% 91.4%);
 }
 .sub-section:hover {
    box-shadow: -1px -1px 10px hsl(325 72.2% 10% / 0.7);
    background-color: hsl(325 72.2% 80%);
-   background-image: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 8px,
-      hsl(325 72.2% 10% / 0.00) 10px,
-      hsl(325 72.2% 10% / 0.00) 11px
-   );
+   background-image: none;
 }
 
    /* ============================================================================
       Styling multiple separate elements 
    ============================================================================ */
+
+.sections,
 nav,
 div.links,
 .jap-section,
@@ -107,6 +117,7 @@ footer {
    display: flex;
    flex-wrap: wrap;
 }
+
 nav .links h3:hover,
 footer h6:hover {
    transform: translateY(-3px);
@@ -136,7 +147,7 @@ nav {
    align-items: center;
    background-color: var(--dark-pink);
    box-shadow: -3px -3px 10px hsl(325 72.2% 10%);
-   transition: box-shadow 0.25s ease-out;
+   transition: box-shadow 0.2s ease-out;
    border-radius: 16px;
    margin: 10px;
    padding: 8px 0;
@@ -165,7 +176,13 @@ nav .links h3 {
    ============================================================================*/
 
 .about {
-   flex: 2 1 300px;
+   display: inline-block;
+   flex: 2;
+   margin-left: 60px;
+   margin-right: 30px;
+}
+.about p {
+   width: 50%;
 }
 
    /* ============================================================================
@@ -173,10 +190,12 @@ nav .links h3 {
    ============================================================================ */
 
 .chapters {
-   flex: 1 1 300px;
+   display: inline-block;
+   flex: 1;
+   margin-right: 60px;
+   margin-left: 30px;
 }
-.chapters h4,
-.chapters li {
+.chapters h4 {
    transition: transform 0.25s ease-in-out, text-decoration 0.25s;
 }
 .chapters h4 {
@@ -186,8 +205,7 @@ nav .links h3 {
    margin-left: 75px;
 }
 
-.chapters h4:hover,
-.chapters li:hover {
+.chapters h4:hover {
    cursor: pointer;
    transform: translateX(10px);
    text-decoration: underline hsl(325 72.2% 50%);
@@ -206,7 +224,7 @@ div.title-bar {
 div.title-bar p {
    margin-left: 15px;
 }
-.sub-section.hirigana{
+.sub-section.hiragana{
    flex: 2 1;
 }
 .sub-section p {
@@ -214,14 +232,8 @@ div.title-bar p {
    font-weight: 500;
 }
 .sub-section .no-bottom-margin {
-   margin-bottom: 0;
-}
-.sub-section li {
-   margin: 20px 30px;
-}
-.sub-section li.link {
-   list-style-type: none;
-   margin-top: 5px;
+   margin-top: 20px;
+   margin-bottom: 5px;
 }
 
 .sub-section.katakana {
@@ -238,7 +250,7 @@ div.title-bar p {
    ============================================================================ */
 
 footer.section {
-   padding: 10px;
+   padding: 20px 10px;
 }
 footer h6 {
    transition: transform 0.25s, text-shadow 0.25s;
@@ -261,11 +273,43 @@ footer h6:hover {
       @media
    ============================================================================ */
 
+@media screen and (width <= 1300px) {
+   .about {
+      margin: 15px 60px;
+   }
+   .about p {
+      width: 75%;
+   }
+   .chapters {
+      flex-basis: 100%;
+      margin: 15px 60px;
+   }
+}
+
+@media screen and (width <= 950px) {
+   .about p {
+      width: none;
+   }
+   .about {
+      margin: 15px 30px;
+   }
+   .chapters {
+      margin: 15px 30px;
+   }
+}
+
 @media screen and (width <= 830px) {
-   .sub-section.hirigana {
+   .sub-section.hiragana {
       margin-left: 10px;
       margin-right: 10px;
       padding-right: 0;
+      padding-left: 0;
+   }
+   .sub-section.hiragana h2 {
+      margin-left: 40px;
+   }
+   .sub-section.hiragana p {
+      margin-left: 15px;
    }
    .sub-section.katakana {
       flex-basis: 100%;
@@ -274,22 +318,15 @@ footer h6:hover {
    }
    .about h2,
    .chapters h2,
-   .about p,
    .chapters p,
    .chapters h4 {
       margin-left: 0;
    }
+   .about p {
+      margin-left: 5px;
+      width: 90%;
+   }
    .chapters li {
       margin-left: 25px;
-   }
-}
-@media screen and (width >= 950px) {
-   .section p {
-      width: 75%;
-   }
-}
-@media screen and (width >= 1200px) {
-   .section p {
-      width: 50%;
    }
 }
